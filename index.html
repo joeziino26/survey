@@ -5,9 +5,8 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
-          integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ=="
-          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+          rel="stylesheet"/>
     <link href="style.css" rel="stylesheet">
     <title>Form</title>
 </head>
@@ -19,61 +18,75 @@
             Please fill out this form on the tribute page on Jane Goodall
         </p>
     </header>
-    <div class="form-group">
-        <label for="name" id="name-label">Name</label>
-        <input class="form-control" id="name" name="name" placeholder="Enter Your Name"
-               required type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="email" id="email-label">Email</label>
-        <input class="form-control" id="email" name="email" placeholder="Please Enter Your Email"
-               required type="email">
-    </div>
-
-    <div class="form-group">
-        <label for="Grade" id="grade-label">Grade</label>
-        <input class="form-control" id="grade" name="grade" placeholder="Please Enter Your Grade"
-               required type="number">
-    </div>
-
-    <div class="form-group">
-        <label for="card" id="card-label">Credit Card Number</label>
-        <input class="form-control" id="card" name="card" placeholder="Please Enter Your Credit  Card Number"
-               required type="text">
-    </div>
-    <div class="form-group">
-        <label for="CVV" id="CVV-label">CVV #</label>
-        <input class="form-control" id="CVV" name="CVV" placeholder="Please Enter Your CVV Number"
-               required type="number">
-    </div>
+    <form action="submit" id="survey-form">
 
 
+        <div class="form-group">
+            <label for="name" id="name-label">Name</label>
+            <input class="form-control" id="name" name="name" placeholder="Enter Your Name"
+                   required type="text">
+        </div>
 
-    <div class="form-group">
-        <p>Would You Like to See Another Tribute Page for a Separate Topic?</p>
-        <label>
-            <input name="user-recommend" value="definitely" type="radio"
-                   class="input-radio" checked>
-            Yes
-        </label>
+        <div class="form-group">
+            <label for="email" id="email-label">Email</label>
+            <input class="form-control" id="email" name="email" placeholder="Please Enter Your Email"
+                   required type="email">
+        </div>
 
-        <label>
-            <input name="user-recommend" value="maybe" type="radio" class="input-radio">
-            Not Sure
-        </label>
+        <div class="form-group">
+            <label for="Grade" id="grade-label">Grade</label>
+            <input class="form-control" id="grade" name="grade" min="0" max="333" placeholder="Please Enter Your Grade"
+                   required type="number">
+        </div>
 
-        <label>
-            <input name="user-recommend" value="maybe" type="radio" class="input-radio">
-            No
-        </label>
+        <div class="form-group">
+            <label for="card" id="card-label">Credit Card Number</label>
+            <input class="form-control" id="card" name="card" placeholder="Please Enter Your Credit  Card Number"
+                   required type="text">
+        </div>
+        <div class="form-group">
+            <label for="CVV" id="CVV-label">CVV #</label>
+            <input class="form-control" id="CVV" name="CVV" placeholder="Please Enter Your CVV Number"
+                   required type="number">
+        </div>
 
-        <p>If you answered Yes, what topic would you be most interested in?</p>
-        <textarea id="comment" class="input-textarea" name="comment"
-                  placeholder="Enter your response here..."></textarea>
-        <button type="submit" class="submit-button"> Submit </button>
-</div>
+        <div class="form-group">
+            <p>What is your yearly income?</p>
+            <select class="form-control" id="dropdown" name="role" required>
+                <option disbaled selected value>Select your yearly income</option>
+                <option value="$0-$10,000">$0-$10,000</option>
+                <option value="$11,000-$50,000">$11,000-$50,000</option>
+                <option value="$51,000-$80,000">$51,000-$80,000</option>
+                <option value="$81,000-$150,000">$81,000-$150,000</option>
+                <option value="$$150,000+">$150,000+</option>
 
+            </select>
+        </div>
+
+        <div class="form-group">
+            <p>Would You Like to See Another Tribute Page for a Separate Topic?</p>
+            <label>
+                <input checked class="input-radio" name="user-recommend"
+                       type="radio" value="definitely">
+                Yes
+            </label>
+
+            <label>
+                <input class="input-radio" name="user-recommend" type="radio" value="maybe">
+                Not Sure
+            </label>
+
+            <label>
+                <input class="input-radio" name="user-recommend" type="radio" value="maybe">
+                No
+            </label>
+
+            <p>If you answered Yes, what topic would you be most interested in?</p>
+            <textarea class="input-textarea" id="comment" name="comment"
+                      placeholder="Enter your response here..."></textarea>
+        </div>
+        <button id="submit" class="button button-primary submit-button" type="submit"> Submit</button>
+    </form>
 </div>
 
 
